@@ -1,5 +1,11 @@
 # StockLiveApp
 
+This is just a small Angular application for live stock updates with Yahoo finance WS api(wss://streamer.finance.yahoo.com).
+
+Enable or disable live price updates for particular stock.
+
+Bootstrap is used for styling.
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.8.
 
 ## Development server

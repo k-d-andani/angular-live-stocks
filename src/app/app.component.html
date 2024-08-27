@@ -1,0 +1,7 @@
+<!-- Stock list -->
+<div class="d-flex flex-wrap gap-3 p-1">
+  @for (ticker of stockTickets; track $index) {
+    <app-stock-details [ticker]="ticker"></app-stock-details>
+  }
+</div>
+<!-- Stock list -->
