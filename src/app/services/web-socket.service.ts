@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
-import { webSocket, WebSocketSubject } from 'rxjs/webSocket';
 import { fromBinary } from "@bufbuild/protobuf";
-import { yatickerSchema } from '../../assets/proto/gen/YPricingData_pb';
 import { Buffer } from 'buffer';
+import { webSocket, WebSocketSubject } from 'rxjs/webSocket';
+import { yatickerSchema } from '../../assets/proto/gen/YPricingData_pb';
 
 /**
  * Web socket service
@@ -36,7 +36,7 @@ export class WebSocketService {
    */
   public deserializeResponseData(responseData: any): any {
     const bufferedData = Buffer.from(responseData.data, 'base64');
-    
+
     return fromBinary(yatickerSchema, bufferedData);
   }
 }

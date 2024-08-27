@@ -3,34 +3,33 @@
      [class.bg-danger]="(ticker?.isEnabled && stockData?.change) < 0"
      [class.bg-secondary]="!ticker?.isEnabled">
 
-  <div class="h1"> {{ ticker.name }} </div>
+       <div class="h1"> {{ ticker.name }} </div>
 
-  @if (stockData) {
+       @if (stockData) {
 
-  <!-- Stock price -->
-  <div class="h2"> {{ stockData.price.toFixed(2) | currency }} </div>
-  <!-- Stock price -->
+       <!-- Stock price -->
+       <div class="h2"> {{ stockData.price.toFixed(2) | currency }} </div>
+       <!-- Stock price -->
 
-  <!-- Stock price change -->
-  <div class="h3"> {{ stockData.change.toFixed(2) | currency }} </div>
-  <!-- Stock price change -->
+       <!-- Stock price change -->
+       <div class="h3"> {{ stockData.change.toFixed(2) | currency }} </div>
+       <!-- Stock price change -->
 
-  <!-- Stock price change percentage -->
-  <div class="h3"> ({{ stockData.changePercent.toFixed(2) }}%) </div>
-  <!-- Stock price change -->
+       <!-- Stock price change percentage -->
+       <div class="h3"> ({{ stockData.changePercent.toFixed(2) }}%) </div>
+       <!-- Stock price change -->
 
-  <!-- Enable or disable stock -->
-  <div class="form-check form-switch"
-       (click)="stockEnableDisable()">
-    <input class="form-check-input"
-           type="checkbox"
-           role="switch"
-           id="flexSwitchCheckDefault"
-           checked="ticker.isEnabled">
-    <label class="form-check-label"
-           for="flexSwitchCheckDefault">{{ ticker.isEnabled ? 'On' : 'Off' }}</label>
-  </div>
-  <!-- Enable or disable stock -->
+       <!-- Enable or disable stock -->
+       <div class="form-check form-switch">
+              <input class="form-check-input"
+                     type="checkbox"
+                     role="switch"
+                     id="flexSwitchCheckDefault-{{ ticker.name }}"
+                     checked="ticker.isEnabled" (click)="stockEnableDisable()">
+              <label class="form-check-label"
+                     for="flexSwitchCheckDefault-{{ ticker.name }}">{{ ticker.isEnabled ? 'On' : 'Off' }}</label>
+       </div>
+       <!-- Enable or disable stock -->
 
-  }
+       }
 </div>

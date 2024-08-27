@@ -1,7 +1,7 @@
-import { Component, Input, OnDestroy, OnInit } from '@angular/core';
-import { interval, Subject, takeUntil, takeWhile } from 'rxjs';
-import { WebSocketService } from '../../services/web-socket.service';
 import { CurrencyPipe } from '@angular/common';
+import { Component, Input, OnDestroy, OnInit } from '@angular/core';
+import { Subject, takeUntil, takeWhile } from 'rxjs';
+import { WebSocketService } from '../../services/web-socket.service';
 
 const pipes = [
   CurrencyPipe
@@ -44,7 +44,7 @@ export class StockDetailsComponent implements OnInit, OnDestroy {
   public stockEnableDisable(): void {
     this.ticker.isEnabled = !this.ticker.isEnabled;
 
-    if(this.ticker.isEnabled) {
+    if (this.ticker.isEnabled) {
       this._getStockData();
     }
   }
